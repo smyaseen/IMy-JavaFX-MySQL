@@ -16,14 +16,14 @@
    <center>
       <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #1ca9c9;" BorderPane.alignment="CENTER">
          <children>
-            <TextField alignment="CENTER" layoutX="94.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="username" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 0px 0px 4px 0px;">
+            <TextField fx:id="username" alignment="CENTER" layoutX="94.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="username" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 0px 0px 4px 0px;">
                <font>
                   <Font size="16.0" />
                </font>
                <effect>
                   <DropShadow />
                </effect></TextField>
-            <PasswordField alignment="CENTER" layoutX="94.0" layoutY="171.0" promptText="password" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 0px 0px 4px 0px;">
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="94.0" layoutY="171.0" promptText="password" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 0px 0px 4px 0px;">
                <font>
                   <Font size="16.0" />
                </font>
@@ -53,7 +53,7 @@
                </effect>
             </Button>
             <Button layoutX="135.0" layoutY="224.0" mnemonicParsing="false" style="-fx-background-color: transparent;" />
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="175.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView onMouseClicked="#signInUser" fitHeight="40.0" fitWidth="40.0" layoutX="175.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../resources/icon/check.png" />
                </image>

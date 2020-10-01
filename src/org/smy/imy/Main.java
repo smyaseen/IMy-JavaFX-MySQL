@@ -23,23 +23,28 @@ public class Main extends Application {
         SceneSelector sceneSelector = new SceneSelector(primaryStage.getScene());
 
         Pane signUp = FXMLLoader.load(getClass().getResource("view/signUp.fxml"));
+        Pane inventory = FXMLLoader.load(getClass().getResource("view/inventory.fxml"));
 
         sceneSelector.addScreen("signIn",signIn);
         sceneSelector.addScreen("signUp",signUp);
+        sceneSelector.addScreen("inventory",inventory);
+
 
     }
 
     @Override
     public void init() throws Exception {
 
-        if (!Database.openDb())
+        if (!Database.getInstance().openDb()) {
             System.out.println("error opening database exiting application..");
+            Platform.exit();
+        }
 
     }
 
     @Override
     public void stop() throws Exception {
-        Database.closeDb();
+        Database.getInstance().closeDb();
         Platform.exit();
     }
 

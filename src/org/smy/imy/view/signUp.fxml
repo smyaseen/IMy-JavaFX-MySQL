@@ -45,8 +45,8 @@
                         <DropShadow />
                     </effect>
                 </Button>
-                <Button onMouseClicked="#signUpUser" layoutX="135.0" layoutY="224.0" mnemonicParsing="false" style="-fx-background-color: transparent;" />
-                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="175.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+                <Button layoutX="135.0" layoutY="224.0" mnemonicParsing="false" style="-fx-background-color: transparent;" />
+                <ImageView onMouseClicked="#signUpUser" fitHeight="40.0" fitWidth="40.0" layoutX="175.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../resources/icon/check.png" />
                     </image>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<DialogPane  prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.smy.imy.controller.AddItemDialogController">
+   <header>
+      <Pane prefHeight="26.0" prefWidth="400.0" />
+   </header>
+   <content>
+      <Pane prefHeight="0.0" prefWidth="400.0">
+         <children>
+            <TextField fx:id="itemName" alignment="CENTER" layoutX="115.0" layoutY="14.0" prefHeight="14.0" prefWidth="170.0" promptText="item name" />
+            <TextField fx:id="itemQuantity" alignment="CENTER" layoutX="115.0" layoutY="101.0" prefHeight="16.0" prefWidth="170.0" promptText="quantity" />
+            <TextField fx:id="itemSingleStockPrice" alignment="CENTER" layoutX="115.0" layoutY="60.0" prefHeight="20.0" prefWidth="170.0" promptText="price" />
+            <TextField fx:id="itemSerialNumber" alignment="CENTER" layoutX="115.0" layoutY="144.0" prefHeight="17.0" prefWidth="170.0" promptText="serial number" />
+            <Button fx:id="addButton" layoutX="342.0" layoutY="189.0" mnemonicParsing="false" text="Add" />
+         </children>
+      </Pane>
+   </content>
+</DialogPane>

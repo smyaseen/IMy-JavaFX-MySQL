@@ -3,7 +3,7 @@ package org.smy.imy.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import org.smy.imy.datasource.Database;
+import org.smy.imy.authentication.SignUpAndSignIn;
 import org.smy.imy.util.SceneSelector;
 
 public class SignUp {
@@ -21,7 +21,16 @@ public class SignUp {
 
     @FXML
     public void signUpUser() {
-        Database.addUser(username.getText(),password.getText());
+
+        System.out.println("clicked");
+
+        if (SignUpAndSignIn.getInstance().signUpUser(username.getText(),password.getText()))
+            System.out.println("user added");
+
+        else
+            System.out.println("user not added");
+
+
     }
 
 
