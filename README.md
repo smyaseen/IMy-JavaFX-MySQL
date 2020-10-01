@@ -1,5 +1,5 @@
 # IMy
-Simple Inventory Management System in Java and JavaFX
+Simple Inventory Management App in Java and JavaFX
 
 Features:
 
