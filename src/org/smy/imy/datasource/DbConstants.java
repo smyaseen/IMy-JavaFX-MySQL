@@ -27,7 +27,7 @@ public final class DbConstants {
     protected static final String COLUMN_INVENTORY_USERNAME = "username";
     protected static final String COLUMN_INVENTORY_ITEM_NAME = "item_name";
     protected static final String COLUMN_INVENTORY_ITEM_QUANTITY = "item_quantity";
-    protected static final String COLUMN_INVENTORY_ITEM_SINGLE_PRICE = "item_single_price";
+    protected static final String COLUMN_INVENTORY_ITEM_SINGLE_PRICE = "item_single_stock_price";
     protected static final String COLUMN_INVENTORY_ITEM_FULL_STOCK_PRICE = "item_full_stock_price";
     protected static final String COLUMN_INVENTORY_ITEM_SERIAL_NUMBER = "item_serial_number";
 
@@ -58,5 +58,12 @@ public final class DbConstants {
 
     protected static final String QUERY_LOAD_USER_INVENTORY = "SELECT * FROM " + DATABASE_IMY + "." + TABLE_INVENTORY
             + " WHERE " + COLUMN_INVENTORY_USERNAME + " = ?";
+
+    protected static final String QUERY_DELETE_ITEM = "DELETE FROM " + DATABASE_IMY + "." + TABLE_INVENTORY + " WHERE "
+            + COLUMN_USERS_USERNAME + " = ? AND " + COLUMN_INVENTORY_ITEM_NAME + " = ?";
+
+    protected static final String QUERY_UPDATE_QUANTITY_PRICE = "UPDATE " + DATABASE_IMY + "." + TABLE_INVENTORY +
+            " SET " + COLUMN_INVENTORY_ITEM_QUANTITY  + " = ? , " + COLUMN_INVENTORY_ITEM_SINGLE_PRICE + " = ? WHERE " +
+            COLUMN_INVENTORY_USERNAME + " = ? AND " + COLUMN_INVENTORY_ITEM_NAME + " = ?";
 
 }

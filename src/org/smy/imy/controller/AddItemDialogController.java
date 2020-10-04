@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.stage.Window;
 import org.smy.imy.model.Item;
@@ -16,10 +17,10 @@ public class AddItemDialogController {
     private TextField itemName;
 
     @FXML
-    private TextField itemQuantity;
+    private Spinner itemQuantity;
 
     @FXML
-    private TextField itemSingleStockPrice;
+    private Spinner itemSingleStockPrice;
 
     @FXML
     private TextField itemSerialNumber;
@@ -29,6 +30,7 @@ public class AddItemDialogController {
 
     @FXML
     private Button addButton;
+
 
     private Item item = null;
 
@@ -40,7 +42,7 @@ public class AddItemDialogController {
                 item = addItem();
 
         if (item != null)
-            Inventory.addItemToTable(item);
+           ItemData.getInstance().getItems().add(item);
 
             }
         });
@@ -51,14 +53,13 @@ public class AddItemDialogController {
 
     public Item addItem() {
 
-        if (itemName.getText().isEmpty() || itemQuantity.getText().isEmpty() ||
-                itemSingleStockPrice.getText().isEmpty() || itemSerialNumber.getText().isEmpty()) {
+        if (itemName.getText().isEmpty() || itemSerialNumber.getText().isEmpty()) {
             showAlert("Empty field(s)!");
             return null;
         }
 
-        Item item = new Item(itemName.getText().trim(), Integer.parseInt(itemQuantity.getText()),
-                Integer.parseInt(itemSingleStockPrice.getText()), itemSerialNumber.getText().trim());
+        Item item = new Item(itemName.getText().trim(), (int) itemQuantity.getValue(),
+                (int) itemSingleStockPrice.getValue(), itemSerialNumber.getText().trim());
 
         int result = ItemData.getInstance().addItem(item);
 

@@ -25,9 +25,9 @@ public class Main extends Application {
         Pane signUp = FXMLLoader.load(getClass().getResource("view/signUp.fxml"));
         Pane inventory = FXMLLoader.load(getClass().getResource("view/inventory.fxml"));
 
+        sceneSelector.addScreen("inventory",inventory);
         sceneSelector.addScreen("signIn",signIn);
         sceneSelector.addScreen("signUp",signUp);
-        sceneSelector.addScreen("inventory",inventory);
 
 
     }

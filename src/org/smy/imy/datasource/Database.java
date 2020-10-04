@@ -19,6 +19,8 @@ public class Database {
     private PreparedStatement selectItemNameNSerialNumberPS;
     private PreparedStatement addItemPS;
     private PreparedStatement loadUserInventoryPS;
+    private PreparedStatement deleteItemPS;
+    private PreparedStatement updateQuantityPricePS;
 
     private String username;
 
@@ -49,6 +51,10 @@ public class Database {
             addItemPS = connection.prepareStatement(DbConstants.QUERY_ADD_ITEM);
 
             loadUserInventoryPS = connection.prepareStatement(DbConstants.QUERY_LOAD_USER_INVENTORY);
+
+            deleteItemPS = connection.prepareStatement(DbConstants.QUERY_DELETE_ITEM);
+
+            updateQuantityPricePS = connection.prepareStatement(DbConstants.QUERY_UPDATE_QUANTITY_PRICE);
 
             return true;
 
@@ -83,6 +89,12 @@ public class Database {
 
             if (loadUserInventoryPS != null)
                 loadUserInventoryPS.close();
+
+            if (deleteItemPS != null)
+                deleteItemPS.close();
+
+            if (updateQuantityPricePS != null)
+                updateQuantityPricePS.close();
 
             connection.close();
         } catch (Exception e) {
@@ -151,7 +163,6 @@ public class Database {
 
         } catch (Exception e) {
             System.out.println("findItem() exception: " + e.getMessage());
-            e.printStackTrace();
             return false;
         }
 
@@ -218,6 +229,59 @@ public class Database {
         }
 
     }
+
+    public boolean deleteItem(Item itemToDelete) {
+
+        try {
+            if (!findUsername(username))
+                    throw new Exception("Username not found!");
+
+            if (findItem(itemToDelete.getItemName(),itemToDelete.getItemSerialNumber()))
+                    throw new Exception("Item not found!");
+
+            deleteItemPS.setString(1,username);
+            deleteItemPS.setString(2,itemToDelete.getItemName());
+
+            int rowsAffected = deleteItemPS.executeUpdate();
+
+            if (rowsAffected != 1)
+                throw new Exception("delete error!");
+
+            return true;
+
+        } catch (Exception e) {
+            System.out.println("deleteItem exception: " + e.getMessage());
+            return false;
+        }
+
+    }
+
+    public boolean updateItem(Item itemToUpdate) {
+
+        try {
+            if (!findUsername(username))
+                throw new Exception("Username not found!");
+
+            if (findItem(itemToUpdate.getItemName(), itemToUpdate.getItemSerialNumber()))
+                throw new Exception("Item not found!");
+
+            updateQuantityPricePS.setInt(1,itemToUpdate.getItemQuantity());
+            updateQuantityPricePS.setInt(2,itemToUpdate.getItemSingleStockPrice());
+            updateQuantityPricePS.setString(3,itemToUpdate.getUsername());
+            updateQuantityPricePS.setString(4,itemToUpdate.getItemName());
+
+            System.out.println(updateQuantityPricePS.executeUpdate());
+
+            return true;
+
+
+        } catch (Exception e) {
+            System.out.println("updateItem exception: " + e.getMessage());
+            return false;
+        }
+
+
+        }
 
 
 }
