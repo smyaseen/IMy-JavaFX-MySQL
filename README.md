@@ -11,7 +11,7 @@ CRUD operations on User's inventory
 
 <img src="https://raw.githubusercontent.com/smyaseen/pics/main/Imy/1.png" />
 
-<h2> Sign Un <h2>
+<h2> Sign Up <h2>
 
 <img src="https://raw.githubusercontent.com/smyaseen/pics/main/Imy/2.png" />
 
