@@ -7,6 +7,8 @@ SignUp/SignIn
 
 CRUD operations on User's inventory
 
+Search product with name
+
 <h2> Sign In <h2>
 
 <img src="https://raw.githubusercontent.com/smyaseen/pics/main/Imy/1.png" />
