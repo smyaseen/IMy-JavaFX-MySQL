@@ -18,7 +18,7 @@ import org.smy.imy.util.SceneSelector;
 import java.io.IOException;
 import java.util.Optional;
 
-public class Inventory {
+public class InventoryController {
 
     @FXML
     private BorderPane borderPane;
@@ -82,7 +82,7 @@ public class Inventory {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.initOwner(borderPane.getScene().getWindow());
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/org/smy/imy/view/addItemDialog.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/org/smy/imy/view/addItemDialogView.fxml"));
 
         dialog.setTitle("Add New Item");
         dialog.setHeaderText("This Adds new Item");

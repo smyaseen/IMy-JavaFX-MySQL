@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.smy.imy.controller.SignUpController">
+    <top>
+          <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="65.0" prefWidth="600.0" style="-fx-background-color: #1ca9c9;" text="Sign Up" textAlignment="CENTER" textFill="WHITE">
+              <font>
+                  <Font size="35.0" />
+              </font>
+              <effect>
+                  <Reflection />
+              </effect>
+          </Label>
+    </top>
+    <effect>
+        <DropShadow height="54.39" radius="27.455" spread="0.1" width="57.43" />
+    </effect>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #1ca9c9;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="41.0" prefWidth="500.0">
+               <children>
+                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../../../../resources/icon/user.png" />
+                          </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                      </ImageView>
+                      <TextField fx:id="username" alignment="CENTER" promptText="username" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 0px 0px 4px 0px;">
+                          <font>
+                              <Font size="16.0" />
+                          </font>
+                          <effect>
+                              <DropShadow />
+                          </effect>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="474.0">
+               <children>
+                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../../../../resources/icon/key.png" />
+                          </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                      </ImageView>
+                      <PasswordField fx:id="password" alignment="CENTER" promptText="password" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 0px 0px 4px 0px;">
+                          <font>
+                              <Font size="16.0" />
+                          </font>
+                          <effect>
+                              <DropShadow />
+                          </effect>
+                  </PasswordField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+                <Button mnemonicParsing="false" onMouseClicked="#signUpUser" style="-fx-background-color: transparent;">
+               <graphic>
+                      <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#signUpUser" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../../../../resources/icon/check.png" />
+                          </image>
+                          <effect>
+                              <DropShadow />
+                          </effect>
+                      </ImageView>
+               </graphic></Button>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox alignment="BOTTOM_LEFT" prefHeight="342.0" prefWidth="76.0" style="-fx-background-color: #1ca9c9;" BorderPane.alignment="CENTER">
+         <children>
+                <Button mnemonicParsing="false" onMouseClicked="#redirectToSignIn" style="-fx-background-color: transparent;">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+               <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#redirectToSignIn" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../resources/icon/toLogin.png" />
+                            </image>
+                        </ImageView>
+               </graphic>
+                </Button>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="342.0" prefWidth="93.0" style="-fx-background-color: #1ca9c9;" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

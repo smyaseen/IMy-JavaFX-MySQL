@@ -8,10 +8,17 @@ import java.util.List;
 
 public class Database {
 
+    // == private static fields ==
+
     private static Database database = null;
 
-    private Connection connection;
+    // == private final fields ==
+
     private final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/imy";
+
+    // == private fields ==
+
+    private Connection connection;
 
     private PreparedStatement addUserPS;
     private PreparedStatement selectAUsernamePS;
@@ -24,8 +31,13 @@ public class Database {
 
     private String username;
 
+    // == constructors ==
+
+
     private Database() {
     }
+
+    // == public static methods ==
 
     public static Database getInstance() {
         if (database == null)
@@ -33,6 +45,8 @@ public class Database {
 
         return database;
     }
+
+    // == public static fields ==
 
     public boolean openDb() {
 

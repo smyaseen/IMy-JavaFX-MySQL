@@ -29,7 +29,4 @@ public class SceneSelector {
         mainScene.setRoot(screenMap.get(name));
     }
 
-
-
-
 }

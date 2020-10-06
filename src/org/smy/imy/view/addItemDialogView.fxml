@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<DialogPane prefHeight="183.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.smy.imy.controller.AddItemDialogController">
+   <content>
+      <VBox alignment="CENTER" prefHeight="154.0" prefWidth="400.0">
+         <children>
+            <TextField fx:id="itemName" alignment="CENTER" prefHeight="14.0" prefWidth="170.0" promptText="item name" />
+            <Spinner fx:id="itemQuantity" editable="true" initialValue="1" max="999" min="1" prefHeight="26.0" prefWidth="81.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin></Spinner>
+            <Spinner fx:id="itemSingleStockPrice" editable="true" initialValue="1" max="999" min="1" prefHeight="26.0" prefWidth="81.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin></Spinner>
+            <TextField fx:id="itemSerialNumber" alignment="CENTER" prefHeight="17.0" prefWidth="170.0" promptText="serial number" />
+            <Button fx:id="addButton" mnemonicParsing="false" style="-fx-background-color: #1ca9c9; -fx-text-fill: white; -fx-font-weight: bold;" text="Add">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+   </content>
+   <header>
+      <Pane prefHeight="0.0" prefWidth="400.0" />
+   </header>
+</DialogPane>

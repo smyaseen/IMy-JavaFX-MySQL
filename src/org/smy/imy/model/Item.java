@@ -5,6 +5,8 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Item {
 
+    // == fields ==
+
     public static String signInUsername;
 
     private final SimpleStringProperty username;
@@ -14,6 +16,8 @@ public class Item {
     private SimpleIntegerProperty itemFullStockPrice;
     private final SimpleStringProperty itemSerialNumber;
 
+    // == constructors ==
+
     public Item(String itemName, int itemQuantity, int itemSingleStockPrice, String itemSerialNumber) {
         this.username = new SimpleStringProperty(signInUsername);
         this.itemName = new SimpleStringProperty(itemName);
@@ -22,6 +26,8 @@ public class Item {
         this.itemFullStockPrice = new SimpleIntegerProperty(itemSingleStockPrice * itemQuantity);
         this.itemSerialNumber = new SimpleStringProperty(itemSerialNumber);
     }
+
+    // == getter setters ==
 
     public String getItemName() {
         return itemName.get();

@@ -2,6 +2,7 @@ package org.smy.imy.authentication;
 
 import org.smy.imy.datasource.Database;
 
+
 public class SignUpAndSignIn {
 
     // == static fields ==

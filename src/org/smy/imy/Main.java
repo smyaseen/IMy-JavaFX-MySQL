@@ -14,7 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Pane signIn = FXMLLoader.load(getClass().getResource("view/signIn.fxml"));
+        Pane signIn = FXMLLoader.load(getClass().getResource("view/SignInView.fxml"));
 
         primaryStage.setScene(new Scene(signIn,600,400));
         primaryStage.setTitle("Imy");
@@ -22,8 +22,8 @@ public class Main extends Application {
 
         SceneSelector sceneSelector = new SceneSelector(primaryStage.getScene());
 
-        Pane signUp = FXMLLoader.load(getClass().getResource("view/signUp.fxml"));
-        Pane inventory = FXMLLoader.load(getClass().getResource("view/inventory.fxml"));
+        Pane signUp = FXMLLoader.load(getClass().getResource("view/SignUpView.fxml"));
+        Pane inventory = FXMLLoader.load(getClass().getResource("view/InventoryView.fxml"));
 
         sceneSelector.addScreen("inventory",inventory);
         sceneSelector.addScreen("signIn",signIn);

@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import org.smy.imy.authentication.SignUpAndSignIn;
 import org.smy.imy.util.SceneSelector;
 
-public class SignUp {
+public class SignUpController {
 
     @FXML
     TextField username;
@@ -22,7 +22,7 @@ public class SignUp {
     @FXML
     public void signUpUser() {
 
-        System.out.println("clicked");
+        if (username.getText().isEmpty() || password.getText().isEmpty()) return;
 
         if (SignUpAndSignIn.getInstance().signUpUser(username.getText(),password.getText()))
             System.out.println("user added");
